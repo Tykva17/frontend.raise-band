@@ -1,0 +1,64 @@
+.header{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 2px 16px rgba(32, 108, 164, 0.16);
+  padding-top: 26px;
+  padding-bottom: 26px;
+  &-menu{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    &-item{
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 150%;
+      /* identical to box height, or 22px */
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      /* Text / paragraph */
+      color: #63718E;
+      text-decoration: none;
+      &.call{
+        font-weight: 700;
+        margin-left: 5px;
+      }
+    }
+  }
+  &-search{
+    margin-right: 30px;
+  }
+  &-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px;
+    padding: 6px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 150%;
+
+    &.download{
+      background: #C774EE;
+      /* identical to box height, or 22px */
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    &.sign-up{
+      border: 2px solid #63718E;
+      box-sizing: border-box;
+      border-radius: 10px;
+      color: #63718E
+    }
+  }
+}

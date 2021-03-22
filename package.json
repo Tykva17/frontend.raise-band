@@ -1,0 +1,33 @@
+{
+  "name": "homework-2-gulp-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/DimaTykva/homework-2-gulp-scss.git"
+  },
+  "author": "Tykva Dmytro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/DimaTykva/homework-2-gulp-scss/issues"
+  },
+  "homepage": "https://gitlab.com/DimaTykva/homework-2-gulp-scss#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.5",
+    "browser-sync": "^2.26.12",
+    "clean-css": "^4.2.3",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-js-minify": "0.0.3",
+    "gulp-sass": "^4.1.0"
+  }
+}

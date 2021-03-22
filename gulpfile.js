@@ -1,75 +1,108 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var cleanCSS = require('gulp-clean-css');
-var del = require('del');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const browserSync = require('browser-sync').create();
+const  minify = require('gulp-js-minify');
+const  imagemin = require('gulp-imagemin');
+const autoprefixer = require('autoprefixer');
 
-var paths = {
-    styles: {
-        src: 'src/css/**/*.less',
-        dest: 'assets/styles/'
+
+
+
+const paths = {
+    src: {
+        styles: 'src/scss/**/*.scss',
+        script: 'src/js/**/*.js',
+        img: 'src/img/**/*',
+        html: 'src/*.html'
     },
-    scripts: {
-        src: 'src/js/**/*.js',
-        dest: 'assets/scripts/'
-    }
+    dist: {
+        styles: 'dist/css',
+        script: 'dist/js',
+        img: 'dist/img',
+        html: 'dist/'
+    },
+
 };
 
-/* Not all tasks need to use streams, a gulpfile is just another node program
- * and you can use all packages available on npm, but it must return either a
- * Promise, a Stream or take a callback and call it
- */
-function clean() {
-    // You can use multiple globbing patterns as you would with `gulp.src`,
-    // for example if you are using del 2.0 or above, return its promise
-    return del([ 'assets' ]);
-}
 
-/*
- * Define our tasks using plain functions
- */
-function styles() {
-    return gulp.src(paths.styles.src)
-        .pipe(less())
-        .pipe(cleanCSS())
-        // pass in options to the stream
-        .pipe(rename({
-            basename: 'main',
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(paths.styles.dest));
-}
 
-function scripts() {
-    return gulp.src(paths.scripts.src, { sourcemaps: true })
-        .pipe(babel())
-        .pipe(uglify())
-        .pipe(concat('main.min.js'))
-        .pipe(gulp.dest(paths.scripts.dest));
-}
 
-function watch() {
-    gulp.watch(paths.scripts.src, scripts);
-    gulp.watch(paths.styles.src, styles);
-}
 
-/*
- * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
- */
-var build = gulp.series(clean, gulp.parallel(styles, scripts));
+const buildHTML = () => (
+    gulp.src([
+        paths.src.html
+    ])
+        // .pipe(useref({noAssets: true}))
+        .pipe(gulp.dest(paths.dist.html))
+);
 
-/*
- * You can use CommonJS `exports` module notation to declare tasks
- */
-exports.clean = clean;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.watch = watch;
-exports.build = build;
-/*
- * Define default task that can be called by just running `gulp` from cli
- */
-exports.default = build;
+const buildJS = () => (
+    gulp.src(paths.src.script)
+        .pipe(concat('script.js'))
+        .pipe(minify())
+        .pipe(gulp.dest(paths.dist.script))
+);
+
+
+
+const buildSCSS = () => (
+    gulp.src(paths.src.styles)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(concat('main.css'))
+
+        .pipe(gulp.dest(paths.dist.styles))
+);
+
+
+const imgBuild = () => (
+    gulp.src('./src/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(paths.dist.img))
+)
+const runDev = () => {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+    });
+    gulp.watch(paths.src.styles, buildSCSS).on('change', browserSync.reload);
+    gulp.watch(paths.src.script, buildJS).on('change', browserSync.reload);
+    gulp.watch(paths.src.html, buildHTML).on('change', browserSync.reload);
+    gulp.watch(paths.src.html, imgBuild).on('change', browserSync.reload);
+
+};
+
+gulp.task('autoprefixer', () => {
+
+    return gulp.src('./src/*.css')
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(gulp.dest('./dest'))
+})
+
+gulp.task('buildJS', buildJS);
+gulp.task('buildSCSS', buildSCSS);
+gulp.task('buildSCSS', imgBuild);
+gulp.task('buildHTML', imgBuild);
+
+gulp.task('build', gulp.series(
+    buildSCSS,
+    buildJS,
+    imgBuild,
+    buildHTML
+
+));
+
+gulp.task('dev', gulp.series(
+    buildSCSS,
+    buildJS,
+    buildHTML,
+    imgBuild,
+    runDev
+));
+
+
+
+
