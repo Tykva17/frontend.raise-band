@@ -1,0 +1,47 @@
+
+.promo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  //padding-left: 5%;
+
+  &-item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 105px;
+    &:first-child{
+      padding-left: 5%;
+    }
+    &-info{
+      width: 40%;
+      &-title{
+        font-style: normal;
+        line-height: 120%;
+        color: #111563;
+        margin: 20px 0px;
+      }
+      &-text{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 150%;
+        color: #63718E;
+      }
+      &-btn{
+        width: 35%;
+      }
+    }
+    &-img{
+      width: 40%;
+
+      & img{
+        box-sizing: border-box;
+        width: 90%;
+      }
+    }
+  }
+}
