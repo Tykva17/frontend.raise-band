@@ -1,0 +1,9 @@
+.calc{
+  padding: 100px;
+  &-block-option-list{
+    display: flex;
+    &-item{
+      width: 50%;
+    }
+  }
+}

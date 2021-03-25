@@ -58,7 +58,7 @@ const buildSCSS = () => (
 
 
 const imgBuild = () => (
-    gulp.src('./src/img/*')
+    gulp.src('./src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest(paths.dist.img))
 )

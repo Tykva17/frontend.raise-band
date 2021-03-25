@@ -45,6 +45,7 @@ h4{
 }
 
 .n-btn{
+  box-sizing: unset;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -83,11 +84,11 @@ h4{
     /* shw-1 */
     box-shadow: 0px 2px 16px rgba(32, 108, 164, 0.16);
     border-radius: 8px;
-    width: 240px;
+    width: 340px;
     //height: 40px;
-    padding: 28px;
-    bottom:48px;
-    left:140px;
+    padding: 16px;
+    top:187px;
+    left:150px;
     &-info{
       display:flex;
       justify-content: flex-start;
@@ -117,6 +118,26 @@ h4{
 
     /* Text / paragraph */
     color: #63718E;
+    }
+  }
+}
+
+
+@media all and (max-width: 990px) and (min-width: 480px){
+  .notice{
+    &-block{
+      top: 70px;
+      left: 280px;
+    }
+  }
+}
+
+@media all and (min-width: 300px) and (max-width: 479px) {
+  .notice{
+    &-block{
+      top: 180px;
+      left: 92px;
+      width: 300px;
     }
   }
 }

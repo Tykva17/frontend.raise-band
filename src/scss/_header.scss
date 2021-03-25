@@ -1,8 +1,12 @@
 body{
-  position:relative;
+  position:absolute;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .header{
+
   display:flex;
   justify-content: space-evenly;
   align-items: center;
@@ -76,8 +80,11 @@ body{
 }
 
 
-@media screen and (max-width: 990px) and (min-width: 780px) {
+@media all and (max-width: 990px) and (min-width: 780px) {
    .header{
+     position: fixed;
+     width: 94%;
+     background-color: #ffffff;
      justify-content: space-between;
      padding-left: 40px;
      padding-right: 40px;
@@ -105,20 +112,26 @@ body{
          }
        }
      }
-     &-mob-menu-list{
+     &-mob-menu-list {
        display: flex;
        flex-direction: column;
        align-items: center;
-       padding-top: 60px;
-       position:absolute;
-       left:100%;
+       margin-top: 60px;
+       position: fixed;
+       left: 100%;
        transition: all .5s;
        transition-property: all;
        transition-duration: 0.5s;
        transition-timing-function: ease;
        transition-delay: 0s;
-       &.active{
-         left:110px;
+
+       &.active {
+         left: 72%;
+         background: #ffffff;
+         padding-left: 10px;
+         padding-right: 10px;
+         height: 100%;
+         margin-right: 0;
          transition: all .5s;
          transition-property: all;
          transition-duration: 0.5s;
@@ -146,9 +159,12 @@ body{
 
 }
 
-@media screen and (max-width: 779px) and (min-width: 480px) {
+@media all and (max-width: 779px) and (min-width: 480px) {
   .header{
     justify-content: space-between;
+    position: fixed;
+    width: 94%;
+    background-color: #ffffff;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 15px;
@@ -179,8 +195,8 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 60px;
-      position:absolute;
+      margin-top: 60px;
+      position: fixed;
       left:100%;
       transition: all .5s;
       transition-property: all;
@@ -188,7 +204,11 @@ body{
       transition-timing-function: ease;
       transition-delay: 0s;
       &.active{
-        left:110px;
+        left:70%;
+        background: #ffffff;
+        padding-left: 10px;
+        height: 100%;
+        margin-right: 0;
         transition: all .5s;
         transition-property: all;
         transition-duration: 0.5s;
@@ -216,8 +236,13 @@ body{
 
 }
 
-@media screen and (max-width: 479px) {
+@media all and (min-width: 300px) and (max-width: 479px)  {
+  body{
+    overflow-x: hidden!important;
+  }
   .header{
+    width: 96%;
+    background-color: #ffffff;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
@@ -249,16 +274,20 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 60px;
-      position:absolute;
+      //margin-top: 60px;
+      position:fixed;
       left:100%;
       transition: all .5s;
       transition-property: all;
       transition-duration: 0.5s;
       transition-timing-function: ease;
       transition-delay: 0s;
+      max-width: 370px;
       &.active{
-        left:110px;
+        background: #ffffff;
+        padding-left: 10px;
+        left:130px;
+        height: 100%;
         transition: all .5s;
         transition-property: all;
         transition-duration: 0.5s;

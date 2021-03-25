@@ -45,3 +45,115 @@
     }
   }
 }
+
+@media all and (max-width: 990px) and (min-width: 780px){
+  .promo{
+    padding-right: 5%;
+    padding-left: 5%;
+    &-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+      &:first-child{
+        padding-left: 0%;
+      }
+      &:last-child{
+        flex-direction: column-reverse;
+      }
+      &-img{
+        width: 70%;
+        &:first-child{
+          display: flex;
+          justify-content: flex-start;
+          margin-left: -222px;
+        }
+      }
+      &-info{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 779px) and (min-width: 480px){
+  .promo{
+    padding-right: 5%;
+    padding-left: 5%;
+    &-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+      &:first-child{
+        padding-left: 0%;
+      }
+      &:last-child{
+        flex-direction: column-reverse;
+      }
+      &-img{
+        width: 70%;
+        &:first-child{
+          display: flex;
+          justify-content: flex-start;
+          margin-left: -222px;
+        }
+      }
+      &-info{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 479px) and (min-width: 300px){
+  .promo{
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 0px;
+    &-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      &:first-child{
+        padding-left: 0%;
+      }
+      &:last-child {
+        flex-direction: column-reverse;
+        }
+      &-img{
+        width: 70%;
+        &:first-child{
+          display: flex;
+          justify-content: flex-start;
+          margin-left: -222px;
+        }
+      }
+      &-info{
+        width: 100%;
+        &-title{
+          font-size: 22px;
+        }
+        &-text{
+          font-size: 18px;
+        }
+        &-btn{
+          width: 85%;
+          margin-bottom: 46px;
+        }
+      }
+      &-img{
+        width: 90%;
+        &:first-child .watch{
+          display: flex;
+          justify-content: right;
+          margin-left: 90px;
+          margin-top: 20px;
+          width: 400px;
+        }
+      }
+    }
+  }
+}
