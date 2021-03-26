@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, max-width=1.0, min-width=1.0, initial-scale=1.0">
+
+    <title>Product Title</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--     A-J-A-X -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js"></script>
+    <!--AJAX END-->
+<!--    FOTORAMA-->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+<!--END FOTORAMA-->
+</head>
+<body>
+  <header class="header">
+      <div class="header-logo">
+          <img src="img/logo.png" alt="logo">
+      </div>
+      <div class="header-menu">
+          <img class="header-search" src="img/search-alt.png" alt="search">
+          <a href="" class="header-menu-item call"><img class="header-mobile-item" src="img/mobile-vibration.png" alt="mobile">
+              Call us</a>
+          <a href="" class="header-menu-item">Product</a>
+          <a href="" class="header-menu-item">FAQ</a>
+          <a href="" class="header-menu-item">Contact</a>
+          <a href="" class="header-btn download">Download</a>
+          <a href="" class="header-btn sign-up">Sign up</a>
+
+      </div>
+      <div class="header-mob-menu">
+          <img src="img/burger-menu.svg" alt="Menu" class="header-mob-menu-toggler">
+      </div>
+  </header>
+  <div id="mobList" class="header-mob-menu-list">
+      <img class="header-search" src="img/search-alt.png" alt="search">
+      <a href="" class="header-menu-item call"><img class="header-mobile-item" src="img/mobile-vibration.png" alt="mobile">
+          Call us</a>
+      <a href="" class="header-menu-item">Product</a>
+      <a href="" class="header-menu-item">FAQ</a>
+      <a href="" class="header-menu-item">Contact</a>
+      <a href="" class="header-btn download">Download</a>
+      <a href="" class="header-btn sign-up">Sign up</a>
+
+  </div>
+
+  <section class="promo">
+      <div class="promo-item">
+          <div class="promo-item-info">
+              <h1 class="promo-item-info-title">At vero eos et accusamus et iusto odio dignissimos ducimus</h1>
+              <p class="promo-item-info-text">Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. </p>
+              <a class="promo-item-info-btn big-btn" href="">Try for free</a>
+          </div>
+          <div class="promo-item-img">
+              <img src="img/iMac.png" alt="iMac">
+          </div>
+      </div>
+      <div class="promo-item">
+          <div class="promo-item-img">
+              <div class="notice">
+                  <div class="notice-block">
+                      <div class="notice-block-info">
+                          <img src="img/Icon.png" alt="icon">
+                          <h4 class="notice-block-info-title">Hello</h4>
+                      </div>
+                      <p class="notice-block-text">
+                          Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est.
+                      </p>
+                  </div>
+              </div>
+              <img class="watch" src="img/watch.png" alt="watch">
+          </div>
+          <div class="promo-item-info ">
+              <h2 class="promo-item-info-title">Temporibus autem quibusdam et aut officiis debitis</h2>
+              <p class="promo-item-info-text watch">At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+              <a class="n-btn" href="">Try for free</a>
+          </div>
+
+      </div>
+
+  </section>
+  <section class="calc">
+      <div class="calc-block">
+          <h2 class="calc-block-title">Calculator</h2>
+          <p class="calc-block-subtitle">Nam libero tempore, cum soluta nobis est eligendi optio</p>
+          <div class="calc-block-option">
+              <div class="calc-block-option-list">
+                  <div class="calc-block-option-list-item">
+                      <form class="submit_form">
+                          <p>
+                              <select name="colors" id="color">
+                                  <option >Colors</option>
+                                  <option value="red">red</option>
+                                  <option value="green">green</option>
+                                  <option value="blue">blue</option>
+                                  <option value="orange">orange</option>
+                              </select>
+                          </p>
+                          <p>
+                              <select name="size" id="size">
+                                  <option >size</option>
+                                  <option value="100">100%</option>
+                                  <option value="150">150%</option>
+                                  <option value="200">200%</option>
+                              </select>
+                          </p>
+                          <p>
+                              <span id="plus">+</span>
+                              <input type="text" id="num" name="number" value="1">
+                              <span id="minus">-</span>
+                          </p>
+                          <p>
+                              <select name="city" id="city">
+                                  <option >city</option>
+                                  <option value="red">Kyiv</option>
+                                  <option value="green">Odesa</option>
+                                  <option value="blue">Rivne</option>
+                                  <option value="orange">Lviv</option>
+                              </select>
+                          </p>
+                          <p>
+                              <select name="delivery" id="delivery">
+                                  <option >delivery</option>
+                                  <option value="red">New Post</option>
+                                  <option value="green">Ukrposhta</option>
+                                  <option value="blue">Pickup</option>
+                              </select>
+                          </p>
+
+                          <button type="submit" class="n-btn">Proceed</button>
+
+                      </form>
+
+                  </div>
+                  <div class="calc-block-option-list-item">
+                  </div>
+              </div>
+              <div class="calc-block-option-result"></div>
+          </div>
+      </div>
+
+
+
+  </section>
+
+  <section class="how-it-works">
+      <h2 class="how-it-works-title">How it works</h2>
+      <p class="how-it-works-subtitle"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+       <div class="how-it-works-steps">
+<!--           <img src="img/steps/active.png" alt="">-->
+<!--           <hr class="line active" >-->
+<!--           <img src="img/steps/2active.png" alt="">-->
+<!--           <hr class="line active">-->
+<!--           <img src="img/steps/3active.png" alt="">-->
+<!--           <hr class="line active">-->
+<!--           <img src="img/steps/4disactive.png" alt="">-->
+           <div class="progress">
+               <div class="progress_inner">
+                   <div class="progress_inner__step">
+                       <label for="step-1">Start order</label>
+                   </div>
+                   <div class="progress_inner__step">
+                       <label for="step-2">Prepare gift</label>
+                   </div>
+                   <div class="progress_inner__step">
+                       <label for="step-3">Pack gift</label>
+                   </div>
+                   <div class="progress_inner__step">
+                       <label for="step-4">Decorate box</label>
+                   </div>
+                   <div class="progress_inner__step">
+<!--                       <label for="step-5">Send gift</label>-->
+                   </div>
+                   <input checked="checked" id="step-1" name="step" type="radio">
+                   <input id="step-2" name="step" type="radio">
+                   <input id="step-3" name="step" type="radio">
+                   <input id="step-4" name="step" type="radio">
+<!--                   <input id="step-5" name="step" type="radio">-->
+                   <div class="progress_inner__bar"></div>
+                   <div class="progress_inner__bar--set"></div>
+                   <div class="progress_inner__tabs">
+                       <div class="tab tab-0">
+                           <h1>Start order</h1>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                       </div>
+                       <div class="tab tab-1">
+                           <h1>Prepare gift</h1>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                       </div>
+                       <div class="tab tab-2">
+                           <h1>Pack gift</h1>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                       </div>
+                       <div class="tab tab-3">
+                           <h1>Decorate box</h1>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                       </div>
+<!--                       <div class="tab tab-4">-->
+<!--                           <h1>Send gift</h1>-->
+<!--                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>-->
+<!--                       </div>-->
+                   </div>
+<!--                   <div class="progress_inner__status">-->
+<!--&lt;!&ndash;                       <div class="box_base"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                       <div class="box_lid"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                       <div class="box_ribbon"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                       <div class="box_bow">&ndash;&gt;-->
+<!--                           <div class="box_bow__left"></div>-->
+<!--                           <div class="box_bow__right"></div>-->
+<!--                       </div>-->
+                       <div class="box_item"></div>
+                       <div class="box_tag"></div>
+                       <div class="box_string"></div>
+                   </div>
+               </div>
+           </div>
+
+  </section>
+
+<!--  <section class="rewievs">-->
+<!--                 <div class="fotorama">-->
+<!--                    <div class="info">-->
+<!--                        <h1 class="info-title">Comment1</h1>-->
+<!--                        <p class="info-text">text comment</p>-->
+<!--                    </div>-->
+<!--                     <div class="info">-->
+<!--                         <h1 class="info-title">Comment1</h1>-->
+<!--                         <p class="info-text">text comment</p>-->
+<!--                     </div>-->
+<!--                     <div class="info">-->
+<!--                         <h1 class="info-title">Comment1</h1>-->
+<!--                         <p class="info-text">text comment</p>-->
+<!--                     </div>-->
+<!--                 </div>-->
+<!--  </section>-->
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
